@@ -31,6 +31,7 @@
         }
         console.log(error);
       });
+      window.location.href = "index.html";
     }
 function toggleSignIn() {
       if (firebase.auth().currentUser) {
@@ -57,4 +58,21 @@ function toggleSignIn() {
           console.log(error);
         });
       }
+    window.location.href = "index.html";
     }
+
+function LoadInfo() {
+  localStorage.uname = firebase.auth().currentUser;
+  document.getElementById("Username").innerHTMl = localStorage.uname;
+}
+
+function OnStart() {
+ if (firebase.auth().currentUser == null) {
+   window.location.href = "login.html";
+ } 
+ else {
+   LoadInfo();
+ }
+}
+
+OnStart();
