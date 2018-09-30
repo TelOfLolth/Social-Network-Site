@@ -57,8 +57,8 @@ function toggleSignIn() {
           }
           console.log(error);
         });
+        window.location.href = "index.html";
       }
-    window.location.href = "index.html";
     }
 
 
